@@ -1,0 +1,16 @@
+<div id="navbar">
+    <ul class="navbar-left-part">
+        <li><a href="{% url 'volume' %}">Traffic</a></li>
+        <li><a href="{% url 'predictions' %}">Predictions</a></li>
+        <div id="navbar-spacer"></div>
+        {% if user.is_authenticated %}
+        <li><a class="navbar-right-buttons" href="{% url 'logout' %}">Logout</a></li>
+                <!--
+        <li><a class="navbar-right-buttons" href="{% url 'login' %}">Login</a></li>
+        <li><a class="navbar-right-buttons" href="{% url 'registration' %}">Register</a></li>    // to FIX LATER !!!
+        -->
+        {% else %}
+
+        {% endif %}
+    </ul>
+</div>

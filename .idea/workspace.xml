@@ -2,13 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23a453b3-72db-49be-9b80-6baff487b7ca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/bethub.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bethub.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bethub/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/bethub/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bethub/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bethub/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -20,6 +32,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/manage.py" />
@@ -38,7 +51,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bethub/manage.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -62,10 +75,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607406983625">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607425527958">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607406983625" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607425527958" />
     <state x="740" y="225" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1607406978351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

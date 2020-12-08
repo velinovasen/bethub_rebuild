@@ -1,0 +1,48 @@
+<div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th class="teams_blocks_header">Home Team</th>
+          <th class="teams_blocks_header">Away Team</th>
+            <th>Home %</th>
+            <th>Draw %</th>
+            <th>Away %</th>
+            <th>Bet</th>
+          <th>Score Prediction</th>
+            <th>AVG. Goals</th>
+            <th>Prediction Odds</th>
+            <th>Home Odds</th>
+            <th>Draw Odds</th>
+            <th>Away Odds</th>
+            <th>Temp</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+      {% for pred in all_predictions %}
+      <tr>
+          <td>{{ pred.date }}</td>
+          <td>{{ pred.time }}</td>
+          <td class="teams_blocks">{{ pred.home_team }}</td>
+          <td class="teams_blocks">{{ pred.away_team }}</td>
+          <td>{{ pred.home_prob }}</td>
+          <td>{{ pred.draw_prob }}</td>
+          <td>{{ pred.away_prob }}</td>
+          <td>{{ pred.bet_sign }}</td>
+          <td>{{ pred.score_predict }}</td>
+          <td>{{ pred.avg_goals|floatformat:2 }}</td>
+          <td>{{ pred.odds_for_prediction|floatformat:2 }}</td>
+          <td>{{ pred.home_odd|floatformat:2 }}</td>
+          <td>{{ pred.draw_odd|floatformat:2 }}</td>
+          <td>{{ pred.away_odd|floatformat:2 }}</td>
+          <td>{{ pred.temp }}</td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>

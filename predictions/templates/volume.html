@@ -1,0 +1,10 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% load static %}
+    {% block site_title %}BETHUB | TRAFFIC{% endblock %}
+    {% block header_content %}
+    <h1>THE MOST PLACED ODDS IN EUROPE AT THE MOMENT</h1>
+    {% endblock %}
+    {% block site_content %}
+    {% include 'partials/tables/volume_table.html' %}
+    {% endblock %}

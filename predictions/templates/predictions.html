@@ -1,0 +1,10 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block site_title %}BETHUB | Predictions{% endblock %}
+    {% include 'partials/navbar.html' %}
+    {% block header_content %}
+        <h1>PREDICTIONS</h1>
+    {% endblock %}
+    {% block site_content %}
+        {% include 'partials/tables/predictions_table.html' %}
+    {% endblock %}
