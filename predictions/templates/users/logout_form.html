@@ -1,0 +1,9 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+    {% block site_title %}BETHUB | LOGOUT{% endblock %}
+    {% block header_content %}
+    <h1>LOGOUT</h1>
+    {% endblock %}
+    {% block site_content %}
+            <p id="have-acc-log-in">Need to log back in? <a href="{% url 'login' %}">Login here</a></p>
+    {% endblock %}

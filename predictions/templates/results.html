@@ -1,0 +1,10 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block site_title %}BETHUB | Results{% endblock %}
+    {% include 'partials/navbar.html' %}
+    {% block header_content %}
+        <h1>RESULTS</h1>
+    {% endblock %}
+    {% block site_content %}
+        {% include 'partials/tables/results_table.html' %}
+    {% endblock %}

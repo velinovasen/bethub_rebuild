@@ -1,0 +1,21 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+    {% block site_title %}BETHUB | LOGIN{% endblock %}
+    {% block header_content %}
+    <h1>LOGIN</h1>
+    {% if messages %}
+        {% for message in messages %}
+        <div>
+            {{ message }}
+        </div>
+        {% endfor %}
+    {% endif %}
+    {% endblock %}
+    {% block site_content %}
+        <form class="form-group" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Login</button>
+            <p id="have-acc-log-in">Do not have an account? <a href="{% url 'register' %}">Register here</a></p>
+        </form>
+    {% endblock %}

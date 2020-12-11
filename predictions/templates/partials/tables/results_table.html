@@ -1,0 +1,36 @@
+<div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th class="teams_blocks_header">Home Team</th>
+          <th class="teams_blocks_header">Away Team</th>
+            <th>Score</th>
+            <th>Home ODD</th>
+            <th>Draw ODD</th>
+            <th>Away ODD</th>
+            <th>Winner</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+      {% for result in all_results %}
+      <tr>
+          <td>{{ result.date }}</td>
+          <td>{{ result.time }}</td>
+          <td class="teams_blocks">{{ result.home_team }}</td>
+          <td class="teams_blocks">{{ result.away_team }}</td>
+          <td>{{ result.score }}</td>
+          <td>{{ result.home_odd|floatformat:2 }}</td>
+          <td>{{ result.draw_odd|floatformat:2 }}</td>
+          <td>{{ result.away_odd|floatformat:2 }}</td>
+          <td>{{ result.winner }}</td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
