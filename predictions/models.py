@@ -38,3 +38,21 @@ class BetsVolume(models.Model):
     def __str__(self):
         return f'{self.home_team} - {self.away_team} - ' \
                f'{self.final_bet} - {self.odds} - {self.amount}'
+
+
+class Game(models.Model):
+    date = models.DateField()
+    time = models.TimeField()
+    home_team = models.CharField(max_length=70)
+    away_team = models.CharField(max_length=70)
+    score = models.CharField(max_length=7, default='-')
+    home_odd = models.FloatField()
+    draw_odd = models.FloatField()
+    away_odd = models.FloatField()
+    status = models.CharField(max_length=30, default='not played')
+    winner = models.CharField(max_length=3, default='-')
+
+    def __str__(self):
+        return f'{self.date} {self.time} | {self.home_team} {self.away_team}' \
+               f'( {self.score} ) | {self.home_odd} {self.draw_odd} {self.away_odd} |' \
+               f' {self.status} {self.winner}'
