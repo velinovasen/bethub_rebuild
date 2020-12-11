@@ -16,3 +16,5 @@ def volume_view(request):
         "all_volume": BetsVolume.objects.all()
     }
     return render(request, 'volume.html', context)
+
+

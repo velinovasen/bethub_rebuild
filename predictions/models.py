@@ -1,6 +1,11 @@
+from django.contrib.auth import get_user_model
+from django.core.validators import MinValueValidator
 from django.db import models
 
 # Create your models here.
+from bethub import settings
+
+UserModel = get_user_model()
 
 
 class Prediction(models.Model):
@@ -56,3 +61,14 @@ class Game(models.Model):
         return f'{self.date} {self.time} | {self.home_team} {self.away_team}' \
                f'( {self.score} ) | {self.home_odd} {self.draw_odd} {self.away_odd} |' \
                f' {self.status} {self.winner}'
+
+
+class AppUser(models.Model):
+    cash = models.DecimalField(validators=[MinValueValidator(0.00)],
+                               max_digits=6, decimal_places=2)
+    user = models.OneToOneField(UserModel, on_delete=models.CASCADE)
+    percent_profit = models.FloatField(default=0)
+
+    def __str__(self):
+        return f'{self.user} - {self.cash} - {self.percent_profit}'
+
