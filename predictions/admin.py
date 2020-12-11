@@ -19,6 +19,11 @@ class PredictionsAdmin(admin.ModelAdmin):
                     'home_odd', 'draw_odd', 'away_odd', 'temp']
 
 
+class AppUserAdmin(admin.ModelAdmin):
+    list_display = ['user', 'cash', 'percent_profit']
+
+
 admin.site.register(m.Game, GameAdmin)
 admin.site.register(m.BetsVolume, BetsVolumeAdmin)
 admin.site.register(m.Prediction, PredictionsAdmin)
+admin.site.register(m.AppUser, AppUserAdmin)
