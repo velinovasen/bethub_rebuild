@@ -12,9 +12,11 @@
     {% endif %}
     {% endblock %}
     {% block site_content %}
-        <form class="form-group" method="POST">
+        <form id="form-id-for-css" class="form-group" method="POST">
             {% csrf_token %}
+            <div id="login-helper">
             {{ form }}
+            </div>
             <button type="submit">Login</button>
             <p id="have-acc-log-in">Do not have an account? <a href="{% url 'register' %}">Register here</a></p>
         </form>

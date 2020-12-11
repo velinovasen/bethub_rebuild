@@ -253,3 +253,11 @@ form span {
 ::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 }
+
+
+/* login-form helper div inside the form */
+#login-helper, #register-helper {
+    display: grid;
+    width: 30%;
+    margin-inline: auto;
+}

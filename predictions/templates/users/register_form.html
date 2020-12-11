@@ -14,7 +14,9 @@
     {% block site_content %}
         <form class="form-group" method="POST">
             {% csrf_token %}
+            <div id="register-helper">
             {{ form }}
+            </div>
             <button type="submit">Register</button>
             <p id="have-acc-log-in">Already have an account? <a href="{% url 'login' %}">Log in</a></p>
         </form>
