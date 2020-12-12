@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="23a453b3-72db-49be-9b80-6baff487b7ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/scrapers/prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/scrapers/prediction.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/predictions/static/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/static/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/templates/partials/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/partials/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/templates/partials/tables/predictions_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/partials/tables/predictions_table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/templates/users/logout_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/users/logout_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/static/js/create_prediction.js" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/static/js/create_prediction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/templates/make_prediction.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/make_prediction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/templates/partials/tables/games_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/partials/tables/games_table.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/predictions/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +54,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/manage.py" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
     <configuration name="bethub_rebuild" type="PythonConfigurationType" factoryName="Python">
@@ -77,15 +92,37 @@
     </task>
     <servers />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607425527958">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607425527958" />
+    <state x="699" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607771840513">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="699" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1607771840513" />
     <state x="740" y="225" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1607406978351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="225" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607406978351" />
+    <state x="728" y="350" key="#com.intellij.tools.ToolEditorDialog" timestamp="1607772129679">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="728" y="350" key="#com.intellij.tools.ToolEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607772129679" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1607406947825">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -106,13 +143,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607407306388" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1607772266242">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607772266242" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/predictions/views.py</url>
-          <line>82</line>
+          <line>84</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

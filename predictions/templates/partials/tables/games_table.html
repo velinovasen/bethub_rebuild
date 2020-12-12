@@ -18,13 +18,19 @@
       <tbody>
           {% for game in all_games %}
           <tr>
-              <td class="date_regular">{{game.date}}</td>
-              <td class="time_regular">{{ game.time }}</td>
-              <td class="teams_regular">{{ game.home_team }}</td>
-              <td class="teams_regular">{{ game.away_team }}</td>
-              <td class="home_odd"><button class="odds_column home">{{ game.home_odd|floatformat:2 }}</button></td>
-              <td class="draw_odd"><button class="odds_column draw">{{ game.draw_odd|floatformat:2 }}</button></td>
-              <td class="away_odd"><button class="odds_column away">{{ game.away_odd|floatformat:2 }}</button></td>
+              <td class="date_regular" id="date-field">{{ game.date }}</td>
+              <td class="time_regular" id="time-field">{{ game.time }}</td>
+              <td class="teams_regular" id="home-team-field">{{ game.home_team }}</td>
+              <td class="teams_regular" id="away-team-field">{{ game.away_team }}</td>
+              {% if user.is_authenticated %}
+              <td class="home_odd"><a class="odds_column home button" href="#popup1" id="home-odd-field">{{ game.home_odd|floatformat:2 }}</a></td>
+              <td class="draw_odd"><a class="odds_column draw button" href="#popup1" id="draw-odd-field">{{ game.draw_odd|floatformat:2 }}</a></td>
+              <td class="away_odd"><a class="odds_column away button" href="#popup1" id="away-odd-field">{{ game.away_odd|floatformat:2 }}</a></td>
+              {% else %}
+              <td class="home_odd"><a class="odds_column home button" href="#popup1">{{ game.home_odd|floatformat:2 }}</a></td>
+              <td class="draw_odd"><a class="odds_column draw button" href="#popup1">{{ game.draw_odd|floatformat:2 }}</a></td>
+              <td class="away_odd"><a class="odds_column away button" href="#popup1">{{ game.away_odd|floatformat:2 }}</a></td>
+              {% endif %}
           </tr>
           {% endfor %}
        </tbody>
