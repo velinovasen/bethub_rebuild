@@ -16,6 +16,7 @@
                     <form id="create-prediction-form" method="POST" action="/create/">
                         {% csrf_token %}
                         <div>
+                            <input type="text" id="game-id-input" disabled="true" style="display: none">
                             <input type="text" id="prediction-date-input" disabled="true">
                             <input type="text" id="prediction-time-input" disabled="true">
                         </div>

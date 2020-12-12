@@ -18,6 +18,7 @@
       <tbody>
           {% for game in all_games %}
           <tr>
+              <td id="game_id" style="display: none">{{ game.id }}</td>
               <td class="date_regular" id="date-field">{{ game.date }}</td>
               <td class="time_regular" id="time-field">{{ game.time }}</td>
               <td class="teams_regular" id="home-team-field">{{ game.home_team }}</td>

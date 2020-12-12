@@ -73,3 +73,14 @@ class AppUser(models.Model):
         return f'{self.user} - {self.cash} - {self.percent_profit}'
 
 
+class UserPrediction(models.Model):
+    game = models.ForeignKey(Game, related_name='game_predicted', on_delete=models.CASCADE)
+    creator = models.ForeignKey(AppUser, related_name='creator', on_delete=models.CASCADE)
+    status = models.CharField(max_length=30, default='pending')
+    home_team = models.CharField(max_length=70)
+    away_team = models.CharField(max_length=70)
+    sign = models.CharField(max_length=10)
+    odd = models.FloatField()
+    thoughts = models.TextField()
+    score = models.CharField(max_length=7, default='-')
+

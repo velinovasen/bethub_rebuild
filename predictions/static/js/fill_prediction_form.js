@@ -1,4 +1,5 @@
 const TableSelectors = {
+    gameId: () => document.getElementById('game_id'),
     dateField: () => document.getElementById('date-field'),
     timeField: () => document.getElementById('time-field'),
     homeTeamField: () => document.getElementById('home-team-field'),
@@ -9,6 +10,7 @@ const TableSelectors = {
 }
 
 const FormSelector = {
+    gameIdInputForm: () => document.getElementById('game-id-input'),
     dateInput: () => document.getElementById('prediction-date-input'),
     timeInput: () => document.getElementById('prediction-time-input'),
     homeTeamInput: () => document.getElementById('home-team-input'),
@@ -16,6 +18,7 @@ const FormSelector = {
     signInput: () => document.getElementById('prediction-sign'),
     oddInput: () => document.getElementById('prediction-odd'),
     predictionTextInput: () => document.getElementById('prediction-text'),
+
 }
 
 const myBets = {
@@ -26,6 +29,7 @@ const myBets = {
 
 function fillForm(event) {
 
+    const gameId = TableSelectors.gameId().innerText;
     const date = TableSelectors.dateField().innerText;
     const time = TableSelectors.timeField().innerText;
     const homeTeam = TableSelectors.homeTeamField().innerText;
@@ -34,6 +38,7 @@ function fillForm(event) {
     const drawOdd = TableSelectors.drawOddField().innerText;
     const awayOdd = TableSelectors.awayOddField().innerText;
 
+    const gameIdInputForm = FormSelector.gameIdInputForm();
     const dateInputForm = FormSelector.dateInput();
     const timeInputForm = FormSelector.timeInput();
     const homeTeamInputForm = FormSelector.homeTeamInput();
@@ -42,13 +47,13 @@ function fillForm(event) {
     const oddInputForm = FormSelector.oddInput();
     const predictionTextInputForm = FormSelector.predictionTextInput();
 
-    dateInputForm.value = date
-    timeInputForm.value = time
-    homeTeamInputForm.value = homeTeam
-    awayTeamInputForm.value = awayTeam
+    gameIdInputForm.value = gameId;
+    dateInputForm.value = date;
+    timeInputForm.value = time;
+    homeTeamInputForm.value = homeTeam;
+    awayTeamInputForm.value = awayTeam;
     signInputForm.value = myBets[event.target.parentElement.className];
     oddInputForm.value = event.target.innerText;
-
 
 }
 
