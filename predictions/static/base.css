@@ -258,6 +258,17 @@ form span {
 /* login-form helper div inside the form */
 #login-helper, #register-helper {
     display: grid;
+    width: 20%;
+    margin-inline: auto;
+}
+
+#logout-inside-div {
     width: 30%;
+    text-align: center;
+    margin-inline: auto;
+}
+
+#make-prediction-make-bet-spacer {
+    width: 40%;
     margin-inline: auto;
 }

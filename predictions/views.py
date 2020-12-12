@@ -4,10 +4,19 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.urls import reverse_lazy
+from django.utils.timezone import now
 from django.views.generic import FormView
 
 from predictions.forms import RegisterForm
 from predictions.models import Prediction, BetsVolume, Game, AppUser
+
+
+def make_prediction_view(request):
+
+    context = {
+        "all_games": Game.objects.filter(status='not played', time__gte=now(), date__gte=now()).order_by('date', 'time')
+    }
+    return render(request, 'make_prediction.html', context)
 
 
 def predictions_view(request):

@@ -1,0 +1,33 @@
+<div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th class="date_regular">Time</th>
+          <th class="time_regular">Time</th>
+          <th class="teams_regular"><div>Home Team</div></th>
+          <th class="teams_regular"><div>Away Team</div></th>
+            <th>Home Odds</th>
+            <th>Draw Odds</th>
+            <th>Away Odds</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+          {% for game in all_games %}
+          <tr>
+              <td class="date_regular">{{game.date}}</td>
+              <td class="time_regular">{{ game.time }}</td>
+              <td class="teams_regular">{{ game.home_team }}</td>
+              <td class="teams_regular">{{ game.away_team }}</td>
+              <td class="home_odd"><button class="odds_column home">{{ game.home_odd|floatformat:2 }}</button></td>
+              <td class="draw_odd"><button class="odds_column draw">{{ game.draw_odd|floatformat:2 }}</button></td>
+              <td class="away_odd"><button class="odds_column away">{{ game.away_odd|floatformat:2 }}</button></td>
+          </tr>
+          {% endfor %}
+       </tbody>
+     </table>
+  </div>
+</div>

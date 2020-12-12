@@ -3,8 +3,15 @@
         <li><a href="{% url 'volume' %}">Traffic</a></li>
         <li><a href="{% url 'predictions' %}">Predictions</a></li>
         <li><a href="{% url 'results' %}">Results</a></li>
-        <div id="navbar-spacer"></div>
+        <div id="navbar-spacer">
+            {% if user.is_authenticated %}
+            <div id="make-prediction-make-bet-spacer">
+                <li><a class="navbar-right-buttons" href="{% url 'make_prediction' %}">Make Prediction</a></li>
+            </div>
+            {% endif %}
+        </div>
         {% if user.is_authenticated %}
+        <li><a>{{user.username}}</a></li>
         <li><a class="navbar-right-buttons" href="{% url 'logout' %}">Logout</a></li>
 
         {% else %}

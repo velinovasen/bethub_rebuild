@@ -1,0 +1,19 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+    {% block site_title %}BETHUB| MAKE PREDICTION{% endblock %}
+        {% include 'partials/navbar.html' %}
+        {% block header_content %}
+            <h1>NEXT GAMES</h1>
+        {% endblock %}
+        {% block site_content %}
+            {% include 'partials/tables/games_table.html' %}
+        {% endblock %}
+
+    {% if user.is_authenticated %}
+        <form id="create-prediction-form" method="POST">
+            {% csrf_token %}
+        </form>
+        {% block body_end_scripts %}
+        {% endblock %}
+    {% endif %}
+

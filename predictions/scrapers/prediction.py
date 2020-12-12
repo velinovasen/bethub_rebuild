@@ -97,7 +97,10 @@ class Predictions:
             pred_sign = re.search(self.REGEX["prediction"], str(game)).group(1)
 
             # SCORE PREDICTION
-            score_pred = re.search(self.REGEX["score_prediction"], str(game)).group(1)
+            try:
+                score_pred = re.search(self.REGEX["score_prediction"], str(game)).group(1)
+            except AttributeError:
+                continue
 
             # FIND AVERAGE GOALS PER GAME
             av_goals = re.search(self.REGEX["average_goals"], str(game)).group(1)

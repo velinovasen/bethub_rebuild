@@ -5,5 +5,9 @@
     <h1>LOGOUT</h1>
     {% endblock %}
     {% block site_content %}
+    <div id="logout-outside-div">
+        <div id="logout-inside-div">
             <p id="have-acc-log-in">Need to log back in? <a href="{% url 'login' %}">Login here</a></p>
-    {% endblock %}
+        </div>
+    </div>
+        {% endblock %}

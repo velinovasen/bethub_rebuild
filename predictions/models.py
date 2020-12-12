@@ -72,3 +72,4 @@ class AppUser(models.Model):
     def __str__(self):
         return f'{self.user} - {self.cash} - {self.percent_profit}'
 
+
