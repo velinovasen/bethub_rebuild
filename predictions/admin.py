@@ -23,7 +23,12 @@ class AppUserAdmin(admin.ModelAdmin):
     list_display = ['user', 'cash', 'percent_profit']
 
 
+class UserPredictionAdmin(admin.ModelAdmin):
+    list_display = ['game', 'creator', 'status', 'home_team', 'away_team', 'sign', 'odd', 'thoughts', 'score']
+
+
 admin.site.register(m.Game, GameAdmin)
 admin.site.register(m.BetsVolume, BetsVolumeAdmin)
 admin.site.register(m.Prediction, PredictionsAdmin)
 admin.site.register(m.AppUser, AppUserAdmin)
+admin.site.register(m.UserPrediction, UserPredictionAdmin)

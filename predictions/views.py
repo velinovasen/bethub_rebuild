@@ -7,8 +7,8 @@ from django.urls import reverse_lazy
 from django.utils.timezone import now
 from django.views.generic import FormView
 
-from predictions.forms import RegisterForm
-from predictions.models import Prediction, BetsVolume, Game, AppUser
+from predictions.forms import RegisterForm, UserPredictionForm
+from predictions.models import Prediction, BetsVolume, Game, AppUser, UserPrediction
 
 
 def make_prediction_view(request):
@@ -16,7 +16,27 @@ def make_prediction_view(request):
         "all_games": Game.objects.filter(status='not played', time__gte=now(), date__gte=now()).order_by('date', 'time')
     }
     if request.POST:
+        form = UserPredictionForm(request.POST)
+        print('gore da')
+        if form.is_valid():
+            print('i vutre da')
+            game_id = form.cleaned_data['game_id']
+            game = Game.objects.filter(pk=game_id)[0]
+            creator = AppUser.objects.get(user=request.user)
+            date_time = str(game).split(' | ')[0]
+            date, time = date_time.split(' ')
+            home_team = form.cleaned_data['home_team']
+            away_team = form.cleaned_data['away_team']
+            sign = form.cleaned_data['sign']
+            odd = form.cleaned_data['odd']
+            thoughts = form.cleaned_data['thoughts']
+            print('VSICHKO 6')
+            UserPrediction.objects.create(game=game, creator=creator, home_team=home_team,
+                                          away_team=away_team, sign=sign, odd=odd, thoughts=thoughts)
+        else:
+            print(form.errors)
         return render(request, 'make_prediction.html', context)
+
     else:
         return render(request, 'make_prediction.html', context)
 

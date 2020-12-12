@@ -28,7 +28,6 @@ const myBets = {
 }
 
 function fillForm(event) {
-
     const gameId = TableSelectors.gameId().innerText;
     const date = TableSelectors.dateField().innerText;
     const time = TableSelectors.timeField().innerText;
@@ -37,6 +36,8 @@ function fillForm(event) {
     const homeOdd = TableSelectors.homeOddField().innerText;
     const drawOdd = TableSelectors.drawOddField().innerText;
     const awayOdd = TableSelectors.awayOddField().innerText;
+
+    console.log(gameId, date, time, homeTeam, awayTeam, homeOdd, drawOdd, awayOdd)
 
     const gameIdInputForm = FormSelector.gameIdInputForm();
     const dateInputForm = FormSelector.dateInput();
