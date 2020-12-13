@@ -174,6 +174,6 @@ class Predictions:
         return all_games
 
 
-if __name__ == '__main__':
-    scraper = Predictions()
-    scraper.scrape()
+# if __name__ == '__main__':
+#     scraper = Predictions()
+#     scraper.scrape()

@@ -1,11 +1,12 @@
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView
-from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 from django.urls import reverse_lazy
 from django.utils.timezone import now
-from django.views.generic import FormView, UpdateView
+from django.views.generic import FormView
 
 from predictions.forms import RegisterForm, UserPredictionForm, UpdateUserPredictionForm
 from predictions.models import Prediction, BetsVolume, Game, AppUser, UserPrediction
@@ -58,6 +59,24 @@ def my_predictions_view(request):
             return render(request, 'my_predictions.html', context)
 
     return render(request, 'my_predictions.html', context)
+
+
+def delete_prediction_view(request, id):
+    # dictionary for initial data with
+    # field names as keys
+    context = {}
+
+    # fetch the object related to passed id
+    obj = get_object_or_404(UserPrediction, id=id)
+
+    if request.method == "POST":
+        # delete object
+        obj.delete()
+        # after deleting redirect to
+        # home page
+        return HttpResponseRedirect("/my_predictions/")
+
+    return render(request, "my_predictions.html", context)
 
 
 def guest_view(request):

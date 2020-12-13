@@ -30,7 +30,7 @@
           <td id="my-thoughts">{{ prediction.thoughts }}</td>
           <td>{{ prediction.status }}</td>
           <td><a href="#popup1" class="edit-prediction-button" data-id="{{ prediction.id }}">Edit</a></td>
-          <td><a href="">Delete</a></td>
+          <td><a href="#popup2" class="delete-prediction-button" data-id="{{ prediction.id }}">Delete</a></td>
       </tr>
       {% endfor %}
       </tbody>
@@ -47,7 +47,20 @@
             <textarea id="prediction-text" form="edit-prediction-form" name="thoughts" placeholder="Please share why you chose this sign."></textarea>
         </div>
         <div id="button-edit-prediction">
-            <button onclick="document.getElementById('edit-prediction-form').submit();">Create</button>
+            <button onclick="document.getElementById('edit-prediction-form').submit();">Update</button>
+        </div>
+        </form>
+    </div>
+</div>
+<div id="popup2" class="overlay">
+    <div class="popup">
+        <form id="delete-prediction-form" method="POST" action="/delete/">
+        {% csrf_token %}
+        <h2>Are you sure you want to delete this prediction?!</h2>
+        <a class="close" href="#">&times;</a>
+            <input form="edit-prediction-form" name="game_id" type="text" id="game-id-delete-input" readonly="true" style="display: none">
+        <div id="button-delete-prediction">
+            <button onclick="document.getElementById('delete-prediction-form').submit();">Delete</button>
         </div>
         </form>
     </div>
