@@ -15,6 +15,6 @@ urlpatterns = [
         template_name='users/logout_form.html'), name='logout'),
     path('create/', views.make_prediction_view, name='make_prediction'),
     path('', views.guest_view, name='guest_page'),
-
+    path('my_predictions/', views.my_predictions_view, name='my_predictions'),
 
 ]

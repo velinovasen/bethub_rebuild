@@ -25,3 +25,8 @@ class UserPredictionForm(forms.Form):
     sign = forms.CharField(max_length=10)
     odd = forms.CharField(max_length=10)
     thoughts = forms.CharField(widget=forms.Textarea())
+
+
+class UpdateUserPredictionForm(forms.Form):
+    game_id = forms.CharField(max_length=100)
+    thoughts = forms.CharField(widget=forms.Textarea())

@@ -12,6 +12,7 @@
             {% endif %}
         </div>
         {% if user.is_authenticated %}
+        <li><a class="navbar-right-buttons" href="{% url 'my_predictions' %}">My predictions</a></li>
         <li><a>{{user.username}}</a></li>
         <li><a class="navbar-right-buttons" href="{% url 'logout' %}">Logout</a></li>
 

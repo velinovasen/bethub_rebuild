@@ -5,9 +5,9 @@ from django.shortcuts import render
 # Create your views here.
 from django.urls import reverse_lazy
 from django.utils.timezone import now
-from django.views.generic import FormView
+from django.views.generic import FormView, UpdateView
 
-from predictions.forms import RegisterForm, UserPredictionForm
+from predictions.forms import RegisterForm, UserPredictionForm, UpdateUserPredictionForm
 from predictions.models import Prediction, BetsVolume, Game, AppUser, UserPrediction
 
 
@@ -39,6 +39,25 @@ def make_prediction_view(request):
 
     else:
         return render(request, 'make_prediction.html', context)
+
+
+def my_predictions_view(request):
+    creator = AppUser.objects.get(user=request.user)
+    context = {
+        "all_predictions": UserPrediction.objects.filter(creator=creator)
+    }
+    if request.POST:
+        form = UpdateUserPredictionForm(request.POST)
+        print('gore da')
+        if form.is_valid():
+            print(form)
+            my_prediction = UserPrediction.objects.filter(pk=form.cleaned_data['game_id'])[0]
+            print(my_prediction)
+            my_prediction.thoughts = form.cleaned_data['thoughts']
+            my_prediction.save()
+            return render(request, 'my_predictions.html', context)
+
+    return render(request, 'my_predictions.html', context)
 
 
 def guest_view(request):

@@ -1,0 +1,15 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+    {% block site_title %}BETHUB| MY PREDICTION{% endblock %}
+        {% include 'partials/navbar.html' %}
+        {% block header_content %}
+            <h1>MY PREDICTIONS</h1>
+        {% endblock %}
+        {% block site_content %}
+
+            {% include 'partials/tables/my_predictions_table.html' %}
+
+        {% endblock %}
+       {% block body_end_scripts %}
+       <script src="{% static 'js/edit_prediction.js' %}"></script>
+        {% endblock %}
