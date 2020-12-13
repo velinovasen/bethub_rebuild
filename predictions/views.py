@@ -41,6 +41,13 @@ def make_prediction_view(request):
         return render(request, 'make_prediction.html', context)
 
 
+def guest_view(request):
+    context = {
+        "all_games": Game.objects.filter(status='not played', time__gte=now(), date__gte=now()).order_by('date', 'time')
+    }
+    return render(request, 'guest_home.html', context)
+
+
 def predictions_view(request):
     context = {
         "all_predictions": Prediction.objects.all()

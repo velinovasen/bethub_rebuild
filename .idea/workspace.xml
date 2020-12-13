@@ -21,10 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="23a453b3-72db-49be-9b80-6baff487b7ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/static/js/fill_prediction_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/static/js/fill_prediction_form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/predictions/templates/make_prediction.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/make_prediction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/templates/partials/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/partials/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/predictions/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,6 +104,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607425527958">
@@ -169,7 +169,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/predictions/views.py</url>
-          <line>105</line>
+          <line>111</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

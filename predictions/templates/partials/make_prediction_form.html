@@ -1,0 +1,33 @@
+                <div id="popup1" class="overlay">
+            <div class="popup">
+                <h2>Make your prediction</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+                    <form id="create-prediction-form" method="POST" action="/create/">
+                        {% csrf_token %}
+                        <div>
+                            <input form="create-prediction-form" name="game_id" type="text" id="game-id-input" readonly="true" style="display: none">
+                            <input form="create-prediction-form" name="date" type="text" id="prediction-date-input" disabled="true">
+                            <input form="create-prediction-form" name="time" type="text" id="prediction-time-input" disabled="true">
+                        </div>
+                        <div id="home-team-div">
+                            <input form="create-prediction-form" name="home_team" type="text" id="home-team-input" readonly="true">
+                        </div>
+                        <div id="away-team-div">
+                            <input form="create-prediction-form" name="away_team" type="text" id="away-team-input" readonly="true">
+                        </div>
+                        <div id="odd-prediction-sign">
+                            <input form="create-prediction-form" name="sign" type="text" id="prediction-sign" readonly="true">
+                            <input form="create-prediction-form" name="odd" type="text" id="prediction-odd" readonly="true">
+                        </div>
+                        <div id="my-thoughts-prediction">
+                            <textarea id="prediction-text" name="thoughts" form="create-prediction-form" placeholder="Please share why you chose this sign.">
+                            </textarea>
+                        </div>
+                        <div id="button-create-prediction">
+                            <button onclick="document.getElementById('create-prediction-form').submit();">Create</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>

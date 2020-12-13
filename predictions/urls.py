@@ -14,6 +14,7 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(
         template_name='users/logout_form.html'), name='logout'),
     path('create/', views.make_prediction_view, name='make_prediction'),
+    path('', views.guest_view, name='guest_page'),
 
 
 ]
