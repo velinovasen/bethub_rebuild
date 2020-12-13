@@ -19,14 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23a453b3-72db-49be-9b80-6baff487b7ca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/static/js/create_prediction.js" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/static/js/edit_prediction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/templates/partials/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/partials/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="23a453b3-72db-49be-9b80-6baff487b7ca" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,8 +46,13 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/manage.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Asen\Desktop\bethub_rebuild\bethub_rebuild" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="bethub_rebuild" type="PythonConfigurationType" factoryName="Python">
