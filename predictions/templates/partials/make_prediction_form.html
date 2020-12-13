@@ -7,21 +7,28 @@
                         {% csrf_token %}
                         <div>
                             <input form="create-prediction-form" name="game_id" type="text" id="game-id-input" readonly="true" style="display: none">
-                            <input form="create-prediction-form" name="date" type="text" id="prediction-date-input" disabled="true">
-                            <input form="create-prediction-form" name="time" type="text" id="prediction-time-input" disabled="true">
+                            <input form="create-prediction-form" name="date" type="text" id="prediction-date-input" disabled="true" style="display: none">
+                            <p id="date-par"></p>
+                            <input form="create-prediction-form" name="time" type="text" id="prediction-time-input" disabled="true" style="display: none">
+                            <p id="time-par"></p>
                         </div>
                         <div id="home-team-div">
-                            <input form="create-prediction-form" name="home_team" type="text" id="home-team-input" readonly="true">
+                            <input form="create-prediction-form" name="home_team" type="text" id="home-team-input" readonly="true" style="display: none">
+                            <p id="home-team-par"></p>
                         </div>
                         <div id="away-team-div">
-                            <input form="create-prediction-form" name="away_team" type="text" id="away-team-input" readonly="true">
+                            <input form="create-prediction-form" name="away_team" type="text" id="away-team-input" readonly="true" style="display: none">
+                            <p id="away-team-par"></p>
                         </div>
                         <div id="odd-prediction-sign">
-                            <input form="create-prediction-form" name="sign" type="text" id="prediction-sign" readonly="true">
-                            <input form="create-prediction-form" name="odd" type="text" id="prediction-odd" readonly="true">
+                            <input form="create-prediction-form" name="sign" type="text" id="prediction-sign" readonly="true" style="display: none">
+                            <p id="sign-form-par"></p>
+                            <input form="create-prediction-form" name="odd" type="text" id="prediction-odd" readonly="true" style="display: none">
+                            <p id="odd-form-par"></p>
                         </div>
                         <div id="my-thoughts-prediction">
-                            <textarea id="prediction-text" name="thoughts" form="create-prediction-form" placeholder="Please share why you chose this sign.">
+                            <label for="prediction-text">Share you thoughts with us:</label>
+                            <textarea id="prediction-text" name="thoughts" form="create-prediction-form">
                             </textarea>
                         </div>
                         <div id="button-create-prediction">

@@ -9,6 +9,9 @@
             {% include 'partials/tables/games_table.html' %}
         {% if user.is_authenticated %}
             {% include 'partials/make_prediction_form.html' %}
+        {% block body_end_scripts %}
+       <script src="{% static 'js/fill_prediction_form.js' %}"></script>
+        {% endblock %}
         {% else %}
         <div id="popup1" class="overlay">
             <div class="popup">

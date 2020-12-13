@@ -21,12 +21,14 @@
   <component name="ChangeListManager">
     <list default="true" id="23a453b3-72db-49be-9b80-6baff487b7ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/scrapers/bets_volume.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/scrapers/bets_volume.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/scrapers/check_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/scrapers/check_results.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/scrapers/prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/scrapers/prediction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/static/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/static/base.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/predictions/static/js/edit_prediction.js" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/static/js/edit_prediction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/static/js/fill_prediction_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/static/js/fill_prediction_form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/templates/guest_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/guest_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/templates/make_prediction.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/make_prediction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/templates/partials/make_prediction_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/partials/make_prediction_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/predictions/templates/partials/tables/my_predictions_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/partials/tables/my_predictions_table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/templates/predictions.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/predictions.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/predictions/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,16 +173,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607772266242" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/predictions/views.py</url>
-          <line>149</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607854238493">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607854238493" />
   </component>
 </project>

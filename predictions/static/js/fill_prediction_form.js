@@ -12,11 +12,17 @@ const TableSelectors = {
 const FormSelector = {
     gameIdInputForm: () => document.getElementById('game-id-input'),
     dateInput: () => document.getElementById('prediction-date-input'),
+    datePar: () => document.getElementById('date-par'),
     timeInput: () => document.getElementById('prediction-time-input'),
+    timePar: () => document.getElementById('time-par'),
     homeTeamInput: () => document.getElementById('home-team-input'),
+    homeTeamPar: () => document.getElementById('home-team-par'),
     awayTeamInput: () => document.getElementById('away-team-input'),
+    awayTeamPar: () => document.getElementById('away-team-par'),
     signInput: () => document.getElementById('prediction-sign'),
+    signPar: () => document.getElementById('sign-form-par'),
     oddInput: () => document.getElementById('prediction-odd'),
+    oddPar: () => document.getElementById('odd-form-par'),
     predictionTextInput: () => document.getElementById('prediction-text'),
 
 }
@@ -50,11 +56,17 @@ function fillForm(event) {
 
     gameIdInputForm.value = gameId;
     dateInputForm.value = date;
+    FormSelector.datePar().innerText = date;
     timeInputForm.value = time;
+    FormSelector.timePar().innerText = time;
     homeTeamInputForm.value = homeTeam;
+    FormSelector.homeTeamPar().innerText = homeTeam;
     awayTeamInputForm.value = awayTeam;
+    FormSelector.awayTeamPar().innerText = awayTeam;
     signInputForm.value = myBets[event.target.parentElement.className];
+    FormSelector.signPar().innerText = myBets[event.target.parentElement.className];
     oddInputForm.value = event.target.innerText;
+    FormSelector.oddPar().innerText = event.target.innerText;
 
 }
 

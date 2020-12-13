@@ -1,5 +1,4 @@
 from django.contrib.auth.models import User
-from django.contrib.auth.views import LoginView
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 
@@ -49,7 +48,8 @@ def my_predictions_view(request):
     }
     if request.POST:
         form = UpdateUserPredictionForm(request.POST)
-        print('gore da')
+        print(form.is_valid())
+        print(form)
         if form.is_valid():
             print(form)
             my_prediction = UserPrediction.objects.filter(pk=form.cleaned_data['game_id'])[0]
