@@ -94,15 +94,15 @@ class Results:
                     if home_score > away_score:
                         home_team = re.search(self.REGEX['home_won'], str(game)).group(1)
                         away_team = re.search(self.REGEX['away_loosing'], str(game)).group(1)
-                        print(f'{home_team} {score} {away_team}')
+                        #print(f'{home_team} {score} {away_team}')
                     elif home_score == away_score:
                         tokens = re.search(self.REGEX['both_teams_draw'], str(game))
                         home_team, away_team = tokens.group(1), tokens.group(2)
-                        print(f'{home_team} {score} {away_team}')
+                        #print(f'{home_team} {score} {away_team}')
                     else:
                         home_team = re.search(self.REGEX['home_loosing'], str(game)).group(1)
                         away_team = re.search(self.REGEX['away_winning'], str(game)).group(1)
-                        print(f'{home_team} {score} {away_team}')
+                        #print(f'{home_team} {score} {away_team}')
 
                     if Game.objects.get(date=date_model, time=time, home_team=home_team, away_team=away_team):
                         game = Game.objects.get(date=date_model, time=time, home_team=home_team, away_team=away_team)
@@ -116,14 +116,29 @@ class Results:
                             game.score = score
                             game.status = 'finished'
                             game.save(update_fields=['winner', 'score', 'status'])
-                            print('UPDATED')
+                            #print('UPDATED')
                         else:
-                            print('still not finished')
+                            #print('still not finished')
+                            pass
+
+                        users_predictions = game.game_predicted.all()        # GET THE USER PREDICTIONS
+
+                        for prediction in users_predictions:
+                            print(prediction.status, prediction.odd, prediction.home_team, prediction.away_team)
+                            if prediction.status == 'pending':
+                                if game.winner == prediction.sign:
+                                    prediction.status = 'won'
+                                else:
+                                    prediction.status = 'lost'
+                                prediction.score = score
+                            prediction.save()
+
+
 
             except Exception as e:
                 print(e)
 
 
-# if __name__ == '__main__':
-#     tmr = Results()
-#     tmr.scrape()
+if __name__ == '__main__':
+    tmr = Results()
+    tmr.scrape()

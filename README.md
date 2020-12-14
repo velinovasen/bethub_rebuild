@@ -4,6 +4,7 @@
 
 <h2>Installation</h2>
     <b>Pull the repo, install the requirements.txt file and run run_all.py from our scrapers to get the most recent information.</b>
+    <b>Hook your PostgreSQL Database</b>
     <b>Don't forget to change the path we append in the top of each scraper!!! -> </b>
     <b>sys.path.append('enter the path to your project')</b>
     

@@ -13,7 +13,8 @@ from predictions.models import Prediction, BetsVolume, Game, AppUser, UserPredic
 
 def make_prediction_view(request):
     context = {
-        "all_games": Game.objects.filter(status='not played', time__gte=now(), date__gte=now()).order_by('date', 'time')
+        "all_games": Game.objects.filter(status='not played', time__gte=now(), date__gte=now()).order_by('date', 'time'),
+        "creator": AppUser.objects.get(user=request.user)
     }
     if request.POST:
         form = UserPredictionForm(request.POST)
@@ -44,7 +45,8 @@ def make_prediction_view(request):
 def my_predictions_view(request):
     creator = AppUser.objects.get(user=request.user)
     context = {
-        "all_predictions": UserPrediction.objects.filter(creator=creator)
+        "all_predictions": UserPrediction.objects.filter(creator=creator),
+        "creator": creator
     }
     if request.POST:
         form = UpdateUserPredictionForm(request.POST)
@@ -62,11 +64,8 @@ def my_predictions_view(request):
 
 
 def delete_prediction_view(request, id):
-    # dictionary for initial data with
-    # field names as keys
     context = {}
 
-    # fetch the object related to passed id
     obj = get_object_or_404(UserPrediction, id=id)
 
     if request.method == "POST":
@@ -88,21 +87,24 @@ def guest_view(request):
 
 def predictions_view(request):
     context = {
-        "all_predictions": Prediction.objects.all()
+        "all_predictions": Prediction.objects.all(),
+        "creator": AppUser.objects.get(user=request.user)
     }
     return render(request, 'predictions.html', context)
 
 
 def volume_view(request):
     context = {
-        "all_volume": BetsVolume.objects.all()
+        "all_volume": BetsVolume.objects.all(),
+        "creator": AppUser.objects.get(user=request.user)
     }
     return render(request, 'volume.html', context)
 
 
 def results_view(request):
     context = {
-        "all_results": Game.objects.filter(status='finished').order_by('-date', '-time')
+        "all_results": Game.objects.filter(status='finished').order_by('-date', '-time'),
+        "creator": AppUser.objects.get(user=request.user)
     }
     return render(request, 'results.html', context)
 

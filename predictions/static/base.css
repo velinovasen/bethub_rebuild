@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+#nav-bar {
+    height: 4.9em;
+}
+
 #navbar {
     margin-left: 15%;
     width: 65%;
