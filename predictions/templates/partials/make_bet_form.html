@@ -1,0 +1,39 @@
+<div id="popup1" class="overlay">
+    <div class="popup">
+        <h2>Place your bet</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+            <form id="create-bet-form" method="POST" action="/bet/">
+                {% csrf_token %}
+                <div>
+                    <input form="create-bet-form" name="game_id" type="text" id="game-id-input" readonly="true" style="display: none">
+                    <input form="create-bet-form" name="date" type="text" id="prediction-date-input" disabled="true" style="display: none">
+                    <p id="date-par"></p>
+                    <input form="create-bet-form" name="time" type="text" id="prediction-time-input" disabled="true" style="display: none">
+                    <p id="time-par"></p>
+                </div>
+                <div id="home-team-div">
+                    <input form="create-bet-form" name="home_team" type="text" id="home-team-input" readonly="true" style="display: none">
+                    <p id="home-team-par"></p>
+                </div>
+                <div id="away-team-div">
+                    <input form="create-bet-form" name="away_team" type="text" id="away-team-input" readonly="true" style="display: none">
+                    <p id="away-team-par"></p>
+                </div>
+                <div id="odd-prediction-sign">
+                    <input form="create-bet-form" name="sign" type="text" id="prediction-sign" readonly="true" style="display: none">
+                    <p id="sign-form-par"></p>
+                    <input form="create-bet-form" name="odd" type="text" id="prediction-odd" readonly="true" style="display: none">
+                    <p id="odd-form-par"></p>
+                </div>
+                <div id="my-bet-amount">
+                    <label for="prediction-bet-amount">Enter amount:</label>
+                    <input type="number" id="prediction-bet-amount" name="amount" form="create-bet-form">
+                </div>
+                <div id="button-create-prediction">
+                    <button onclick="document.getElementById('create-bet-form').submit();">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

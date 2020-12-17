@@ -1,0 +1,21 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+    {% block site_title %}BETHUB| MAKE PREDICTION{% endblock %}
+        {% include 'partials/navbar.html' %}
+        {% block header_content %}
+            <h1>PLACE A BET</h1>
+        {% endblock %}
+        {% block site_content %}
+                    {% if message %}
+                    <p>{{message}}</p>
+                    {% endif %}
+            {% include 'partials/tables/games_table.html' %}
+        {% if user.is_authenticated %}
+            {% include 'partials/make_bet_form.html' %}
+        {% endif %}
+        {% endblock %}
+        {% block body_end_scripts %}
+       <script src="{% static 'js/fill_bet_form.js' %}"></script>
+        {% endblock %}
+
+

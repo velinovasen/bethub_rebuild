@@ -17,4 +17,5 @@ urlpatterns = [
     path('', views.guest_view, name='guest_page'),
     path('my_predictions/', views.my_predictions_view, name='my_predictions'),
     path('delete/<int:id>/', views.delete_prediction_view, name='delete_prediction'),
+    path('bet/', views.make_bet_view, name='make_bet'),
 ]

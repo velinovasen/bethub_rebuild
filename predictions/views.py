@@ -7,13 +7,49 @@ from django.urls import reverse_lazy
 from django.utils.timezone import now
 from django.views.generic import FormView
 
-from predictions.forms import RegisterForm, UserPredictionForm, UpdateUserPredictionForm
-from predictions.models import Prediction, BetsVolume, Game, AppUser, UserPrediction
+from predictions.forms import RegisterForm, UserPredictionForm, UpdateUserPredictionForm, BetForm
+from predictions.models import Prediction, BetsVolume, Game, AppUser, UserPrediction, Bet
+
+
+def make_bet_view(request):
+    context = {
+        "all_games": Game.objects.filter(status='not played', time__gte=now(), date__gte=now()).order_by('date',
+                                                                                                         'time'),
+        "creator": AppUser.objects.get(user=request.user)
+    }
+    if request.POST:
+        form = BetForm(request.POST)
+        print('gore da')
+        if form.is_valid():
+            print('i vutre da')
+            game_id = form.cleaned_data['game_id']
+            game = Game.objects.filter(pk=game_id)[0]
+            creator = AppUser.objects.get(user=request.user)
+            date_time = str(game).split(' | ')[0]
+            date, time = date_time.split(' ')
+            sign = form.cleaned_data['sign']
+            odd = form.cleaned_data['odd']
+            amount = form.cleaned_data['amount']
+            if amount > creator.cash:
+                print('NO MONEY')
+                context['message'] = 'Not enough money!'
+                return render(request, 'make_bet.html', context)
+            print('VSICHKO 6')
+            Bet.objects.create(game=game, bet_user=creator, bet_sign=sign, bet_odd=odd, bet_amount=amount)
+            creator.cash -= amount
+            creator.save()
+        else:
+            print(form.errors)
+        return render(request, 'make_bet.html', context)
+
+    else:
+        return render(request, 'make_bet.html', context)
 
 
 def make_prediction_view(request):
     context = {
-        "all_games": Game.objects.filter(status='not played', time__gte=now(), date__gte=now()).order_by('date', 'time'),
+        "all_games": Game.objects.filter(status='not played', time__gte=now(), date__gte=now()).order_by('date',
+                                                                                                         'time'),
         "creator": AppUser.objects.get(user=request.user)
     }
     if request.POST:

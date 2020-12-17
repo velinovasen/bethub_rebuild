@@ -102,3 +102,4 @@ class Bet(models.Model):
     bet_sign = models.CharField(max_length=10)
     bet_odd = models.FloatField()
     score = models.CharField(max_length=7, default='-')
+    status = models.IntegerField(default=2, blank=True, choices=BET_RESULTS)

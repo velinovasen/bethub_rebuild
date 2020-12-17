@@ -30,3 +30,11 @@ class UserPredictionForm(forms.Form):
 class UpdateUserPredictionForm(forms.Form):
     game_id = forms.CharField(max_length=100)
     thoughts = forms.CharField(widget=forms.Textarea())
+    
+
+class BetForm(forms.Form):
+    game_id = forms.CharField(max_length=100)
+    sign = forms.CharField(max_length=10)
+    odd = forms.CharField(max_length=10)
+    amount = forms.DecimalField(max_value=999999,
+                                min_value=1)
