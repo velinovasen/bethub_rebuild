@@ -1,28 +1,29 @@
 <div id="navbar">
+    {% if user.is_authenticated %}
     <ul class="navbar-left-part">
         <li><a href="{% url 'guest_page' %}">Home</a></li>
-        {% if user.is_authenticated %}
+
         <li><a href="{% url 'volume' %}">Traffic</a></li>
         <li><a href="{% url 'predictions' %}">Predictions</a></li>
         <li><a href="{% url 'results' %}">Results</a></li>
-        {% endif %}
+
         <div id="navbar-spacer">
-            {% if user.is_authenticated %}
-            <div id="make-prediction-make-bet-spacer">
-                <li><a class="navbar-right-buttons" href="{% url 'make_prediction' %}">Make Prediction</a></li>
-            </div>
-            {% endif %}
+
+        <div id="make-prediction-make-bet-spacer">
+            <li><a class="navbar-right-buttons" href="{% url 'make_bet' %}"><b>Place a Bet</b></a></li>
         </div>
-        {% if user.is_authenticated %}
-        <li><a class="navbar-right-buttons" href="{% url 'my_predictions' %}">My predictions</a></li>
-        <li><a><span>{{user.username}}</span><br><span>{{creator.cash}}</span></a></li>
+
+        </div>
+        <li><a class="navbar-right-buttons" href="{% url 'make_prediction' %}">My Blog</a></li>
+        <li><a><span><b>{{user.username}} {{creator.cash}}</b></span></a></li>
         <li><a class="navbar-right-buttons" href="{% url 'logout' %}">Logout</a></li>
-
-        {% else %}
-
+    </ul>
+    {% else %}
+    <ul class="navbar-left-part">
+        <li><a href="{% url 'guest_page' %}">Home</a></li>
+        <li><a href="{% url 'volume' %}">Traffic</a></li>
         <li><a class="navbar-right-buttons" href="{% url 'login' %}">Login</a></li>
         <li><a class="navbar-right-buttons" href="{% url 'register' %}">Register</a></li>
-
-        {% endif %}
     </ul>
+    {% endif %}
 </div>

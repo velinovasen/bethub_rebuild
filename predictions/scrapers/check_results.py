@@ -1,7 +1,5 @@
-import json
 import os
 import sys
-from json import dump, dumps
 
 import django
 from django.core.wsgi import get_wsgi_application
@@ -123,7 +121,7 @@ class Results:
 
                         users_predictions = game.game_predicted.all()        # GET THE USER PREDICTIONS
 
-                        for prediction in users_predictions:
+                        for prediction in users_predictions:     # CHECK THE PREDICTIONS STATUS AND UPDATE
                             print(prediction.status, prediction.odd, prediction.home_team, prediction.away_team)
                             if prediction.status == 'pending':
                                 if game.winner == prediction.sign:
@@ -133,12 +131,23 @@ class Results:
                                 prediction.score = score
                             prediction.save()
 
+                        users_bets = game.bet_game.all()  # GET ALL BETS
 
+                        for user_bet in users_bets:              # CHECK THE BETS STATUS AND UPDATE
+                            print(user_bet.status)
+                            if user_bet.status == 2:
+                                if game.winner == user_bet.bet_sign:
+                                    user_bet.status = 1
+                                    user_bet.bet_user.cash += user_bet.bet_odd * user_bet.amount
+                                else:
+                                    user_bet.status = 0
+                                user_bet.score = score
+                            user_bet.save()
 
             except Exception as e:
                 print(e)
 
 
-if __name__ == '__main__':
-    tmr = Results()
-    tmr.scrape()
+# if __name__ == '__main__':
+#     tmr = Results()
+#     tmr.scrape()
