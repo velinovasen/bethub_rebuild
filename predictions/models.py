@@ -84,3 +84,21 @@ class UserPrediction(models.Model):
     thoughts = models.TextField()
     score = models.CharField(max_length=7, default='-')
 
+
+BET_CHOICES = ((1, 1),
+               (2, 2),
+               (0, 0)
+               )
+
+
+class Bet(models.Model):
+    BET_RESULTS = ((0, "LOST"),
+                   (1, "WON"),
+                   (2, "PENDING"))
+    bet_user = models.ForeignKey(AppUser, related_name='bet_user', on_delete=models.CASCADE)
+    bet_amount = models.DecimalField(validators=[MinValueValidator(1.00)],
+                                     max_digits=8, decimal_places=2)
+    game = models.ForeignKey(Game, related_name='bet_game', on_delete=models.CASCADE)
+    bet_sign = models.CharField(max_length=10)
+    bet_odd = models.FloatField()
+    score = models.CharField(max_length=7, default='-')
