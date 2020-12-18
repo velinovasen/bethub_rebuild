@@ -2,8 +2,6 @@ import django.contrib.auth.views as auth_views
 from django.urls import path
 from predictions import views
 
-
-
 urlpatterns = [
     path('predictions/', views.predictions_view, name='predictions'),
     path('volume/', views.volume_view, name='volume'),
@@ -18,4 +16,5 @@ urlpatterns = [
     path('my_predictions/', views.my_predictions_view, name='my_predictions'),
     path('delete/<int:id>/', views.delete_prediction_view, name='delete_prediction'),
     path('bet/', views.make_bet_view, name='make_bet'),
+    path('history/', views.my_bets_history_view, name='history'),
 ]

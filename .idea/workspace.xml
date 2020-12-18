@@ -21,13 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="23a453b3-72db-49be-9b80-6baff487b7ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/predictions/scrapers/check_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/scrapers/check_results.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/scrapers/get_games.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/scrapers/get_games.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/static/js/fill_bet_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/static/js/fill_bet_form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/static/js/fill_prediction_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/static/js/fill_prediction_form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/templates/partials/make_bet_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/partials/make_bet_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/templates/partials/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/partials/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/predictions/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +42,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1kycyF6OtgOSatZqmp3jW8pLtD8" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -60,6 +57,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Asen\Desktop\bethub_rebuild\bethub_rebuild\predictions\templates" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Asen\Desktop\bethub_rebuild\bethub_rebuild" />
     </key>

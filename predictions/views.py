@@ -11,6 +11,15 @@ from predictions.forms import RegisterForm, UserPredictionForm, UpdateUserPredic
 from predictions.models import Prediction, BetsVolume, Game, AppUser, UserPrediction, Bet
 
 
+def my_bets_history_view(request):
+    appUser = AppUser.objects.get(user=request.user)
+    context = {
+        "all_bets": Bet.objects.filter(game__status='finished', bet_user=appUser),
+        "creator": appUser
+    }
+    return render(request, 'my_bets_history.html', context)
+
+
 def make_bet_view(request):
     context = {
         "all_games": Game.objects.filter(status='not played', time__gte=now(), date__gte=now()).order_by('date',
