@@ -23,7 +23,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/predictions/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/predictions/scrapers/check_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/scrapers/check_results.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/scrapers/get_games.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/scrapers/get_games.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/static/js/fill_bet_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/static/js/fill_bet_form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/static/js/fill_prediction_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/static/js/fill_prediction_form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/templates/partials/make_bet_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/partials/make_bet_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/predictions/templates/partials/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/partials/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +64,7 @@
       <recent name="C:\Users\Asen\Desktop\bethub_rebuild\bethub_rebuild" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.run_all">
     <configuration name="bethub_rebuild" type="PythonConfigurationType" factoryName="Python">
       <module name="bethub" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -81,6 +86,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="run_all" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="bethub" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/predictions/scrapers" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/predictions/scrapers/run_all.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.run_all" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -132,22 +163,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607406947825" />
-    <state width="1899" height="348" key="GridCell.Tab.0.bottom" timestamp="1607791267777">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1608243784721">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607791267777" />
-    <state width="1899" height="348" key="GridCell.Tab.0.center" timestamp="1607791267777">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608243784721" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1608243784721">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607791267777" />
-    <state width="1899" height="348" key="GridCell.Tab.0.left" timestamp="1607791267777">
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608243784721" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1608243784720">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607791267777" />
-    <state width="1899" height="348" key="GridCell.Tab.0.right" timestamp="1607791267777">
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608243784720" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1608243784721">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607791267777" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608243784721" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1607791267778">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

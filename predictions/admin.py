@@ -28,7 +28,7 @@ class UserPredictionAdmin(admin.ModelAdmin):
 
 
 class BetAdmin(admin.ModelAdmin):
-    list_display = ['bet_user', 'game', 'bet_amount', 'bet_odd', 'bet_odd', 'score', 'status']
+    list_display = ['bet_user', 'game', 'bet_amount', 'bet_sign', 'bet_odd', 'score', 'status']
 
 
 admin.site.register(m.Game, GameAdmin)

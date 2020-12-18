@@ -132,7 +132,6 @@ def predictions_view(request):
 def volume_view(request):
     context = {
         "all_volume": BetsVolume.objects.all(),
-        "creator": AppUser.objects.get(user=request.user)
     }
     return render(request, 'volume.html', context)
 

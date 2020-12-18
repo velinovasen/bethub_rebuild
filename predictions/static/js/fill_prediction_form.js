@@ -1,9 +1,9 @@
 const TableSelectors = {
-    gameId: () => document.getElementById('game_id'),
-    dateField: () => document.getElementById('date-field'),
-    timeField: () => document.getElementById('time-field'),
-    homeTeamField: () => document.getElementById('home-team-field'),
-    awayTeamField: () => document.getElementById('away-team-field'),
+    gameId: () => event.target.parentElement.parentElement.getElementsByTagName('td')[0].innerText,
+    dateField: () => event.target.parentElement.parentElement.getElementsByTagName('td')[1].innerText,
+    timeField: () => event.target.parentElement.parentElement.getElementsByTagName('td')[2].innerText,
+    homeTeamField: () => event.target.parentElement.parentElement.getElementsByTagName('td')[3].innerText,
+    awayTeamField: () => event.target.parentElement.parentElement.getElementsByTagName('td')[4].innerText,
     homeOddField: () => document.getElementById('home-odd-field'),
     drawOddField: () => document.getElementById('draw-odd-field'),
     awayOddField: () => document.getElementById('away-odd-field'),
@@ -34,11 +34,11 @@ const myBets = {
 }
 
 function fillForm(event) {
-    const gameId = TableSelectors.gameId().innerText;
-    const date = TableSelectors.dateField().innerText;
-    const time = TableSelectors.timeField().innerText;
-    const homeTeam = TableSelectors.homeTeamField().innerText;
-    const awayTeam = TableSelectors.awayTeamField().innerText;
+    const gameId = TableSelectors.gameId();
+    const date = TableSelectors.dateField();
+    const time = TableSelectors.timeField();
+    const homeTeam = TableSelectors.homeTeamField();
+    const awayTeam = TableSelectors.awayTeamField();
     const homeOdd = TableSelectors.homeOddField().innerText;
     const drawOdd = TableSelectors.drawOddField().innerText;
     const awayOdd = TableSelectors.awayOddField().innerText;
@@ -72,4 +72,25 @@ function fillForm(event) {
 
 for (odd of document.getElementsByClassName('odds_column')) {
     odd.addEventListener('click', fillForm)
+}
+
+function sendForm(event) {
+    document.getElementById('create-bet-form').submit();
+    cleanForm()
+}
+
+function cleanForm() {
+    FormSelector.gameIdInputForm().value = '';
+    FormSelector.dateInput().value = '';
+    FormSelector.datePar().innerText = '';
+    FormSelector.timeInput().value = '';
+    FormSelector.timePar().innerText = '';
+    FormSelector.homeTeamInput().value = '';
+    FormSelector.homeTeamPar().innerText = '';
+    FormSelector.awayTeamInput().value = '';
+    FormSelector.awayTeamPar().innerText = '';
+    FormSelector.signInput().value = '';
+    FormSelector.signPar().innerText = '';
+    FormSelector.oddInput().value = '';
+    FormSelector.oddPar().innerText = '';
 }

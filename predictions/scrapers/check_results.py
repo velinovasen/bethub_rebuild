@@ -134,20 +134,23 @@ class Results:
                         users_bets = game.bet_game.all()  # GET ALL BETS
 
                         for user_bet in users_bets:              # CHECK THE BETS STATUS AND UPDATE
-                            print(user_bet.status)
+                            print(user_bet.status, user_bet.bet_user.percent_profit)
                             if user_bet.status == 2:
                                 if game.winner == user_bet.bet_sign:
                                     user_bet.status = 1
                                     user_bet.bet_user.cash += user_bet.bet_odd * user_bet.amount
+                                    user_bet.bet_user.percent_profit += (float(user_bet.bet_amount) * 100) / 500
                                 else:
                                     user_bet.status = 0
+                                    user_bet.bet_user.percent_profit -= (float(user_bet.bet_amount) * 100) / 500
                                 user_bet.score = score
                             user_bet.save()
+                            user_bet.bet_user.save()
 
             except Exception as e:
                 print(e)
 
 
-# if __name__ == '__main__':
-#     tmr = Results()
-#     tmr.scrape()
+if __name__ == '__main__':
+    tmr = Results()
+    tmr.scrape()

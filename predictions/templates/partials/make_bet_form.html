@@ -1,7 +1,7 @@
 <div id="popup1" class="overlay">
     <div class="popup">
         <h2>Place your bet</h2>
-        <a class="close" href="#">&times;</a>
+        <a class="close" href="#" onclick="cleanForm">&times;</a>
         <div class="content">
             <form id="create-bet-form" method="POST" action="/bet/">
                 {% csrf_token %}
@@ -31,7 +31,7 @@
                     <input type="number" id="prediction-bet-amount" name="amount" form="create-bet-form">
                 </div>
                 <div id="button-create-prediction">
-                    <button onclick="document.getElementById('create-bet-form').submit();">Create</button>
+                    <button id="send-form-button" onclick="sendForm">Create</button>
                 </div>
             </form>
         </div>
