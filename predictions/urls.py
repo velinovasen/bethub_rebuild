@@ -10,7 +10,7 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(
         template_name='users/login_form.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(
-        template_name='users/logout_form.html'), name='logout'),
+        template_name='users/logout_form.html'), name='logout'), 
     path('', views.guest_view, name='guest_page'),
     path('bet/', views.make_bet_view, name='make_bet'),
     path('history/', views.my_bets_history_view, name='history'),
