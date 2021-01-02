@@ -11,10 +11,7 @@ urlpatterns = [
         template_name='users/login_form.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(
         template_name='users/logout_form.html'), name='logout'),
-    path('create/', views.make_prediction_view, name='make_prediction'),
     path('', views.guest_view, name='guest_page'),
-    path('my_predictions/', views.my_predictions_view, name='my_predictions'),
-    path('delete/<int:id>/', views.delete_prediction_view, name='delete_prediction'),
     path('bet/', views.make_bet_view, name='make_bet'),
     path('history/', views.my_bets_history_view, name='history'),
 ]
