@@ -135,14 +135,21 @@ class Results:
 
                         for user_bet in users_bets:              # CHECK THE BETS STATUS AND UPDATE
                             print(user_bet.status, user_bet.bet_user.percent_profit)
+                            total_cash = 0
                             if user_bet.status == 2:
                                 if game.winner == user_bet.bet_sign:
                                     user_bet.status = 1
-                                    user_bet.bet_user.cash += user_bet.bet_odd * user_bet.amount
-                                    user_bet.bet_user.percent_profit += (float(user_bet.bet_amount) * 100) / 500
+                                    curr_amount = float(user_bet.bet_user.cash)
+                                    user_bet.bet_user.cash = curr_amount + float(user_bet.bet_odd * float(user_bet.bet_amount))
+                                    total_cash = curr_amount + float(user_bet.bet_odd * float(user_bet.bet_amount))
                                 else:
                                     user_bet.status = 0
-                                    user_bet.bet_user.percent_profit -= (float(user_bet.bet_amount) * 100) / 500
+                                    total_cash = float(user_bet.bet_odd * float(user_bet.bet_amount))
+                                print(f'{total_cash} -- {total_cash / 500 * 100}')
+                                if total_cash < 500:
+                                    user_bet.bet_user.percent_profit = f'{-(100 - total_cash / 500 * 100):.2f}'
+                                else:
+                                    user_bet.bet_user.percent_profit = f'{(total_cash / 500 * 100) - 100:.2f}'
                                 user_bet.score = score
                             user_bet.save()
                             user_bet.bet_user.save()
@@ -151,6 +158,6 @@ class Results:
                 print(e)
 
 
-# if __name__ == '__main__':
-#     tmr = Results()
-#     tmr.scrape()
+if __name__ == '__main__':
+    tmr = Results()
+    tmr.scrape()
