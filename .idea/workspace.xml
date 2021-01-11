@@ -20,8 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23a453b3-72db-49be-9b80-6baff487b7ca" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bethub/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/bethub/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bethub/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/bethub/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/predictions/scrapers/check_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/scrapers/check_results.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/scrapers/get_games.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/scrapers/get_games.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,6 +167,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="586" y="198" key="#Inspections" timestamp="1610371205865">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="586" y="198" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1610371205865" />
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607425527958">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

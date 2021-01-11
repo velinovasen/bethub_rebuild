@@ -139,6 +139,6 @@ class UpcomingGames:
             print(the_bulk)
 
 
-if __name__ == '__main__':
-    tmr = UpcomingGames()
-    tmr.scrape()
+# if __name__ == '__main__':
+#     tmr = UpcomingGames()
+#     tmr.scrape()
