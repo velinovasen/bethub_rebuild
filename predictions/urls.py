@@ -14,4 +14,5 @@ urlpatterns = [
     path('', views.guest_view, name='guest_page'),
     path('bet/', views.make_bet_view, name='make_bet'),
     path('history/', views.my_bets_history_view, name='history'),
+    path('pending/', views.my_pending_bets_view, name='pending'),
 ]

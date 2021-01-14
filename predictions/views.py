@@ -11,7 +11,13 @@ from predictions.forms import RegisterForm, UserPredictionForm, UpdateUserPredic
 from predictions.models import Prediction, BetsVolume, Game, AppUser, UserPrediction, Bet
 
 
-
+def my_pending_bets_view(request):
+    app_user = AppUser.objects.get(user=request.user)
+    context = {
+        "all_bets": reversed(Bet.objects.filter(game__status='not played', bet_user=app_user)),
+        "creator": app_user
+    }
+    return render(request, 'my_pending_bets.html', context)
 
 
 def my_bets_history_view(request):
@@ -181,7 +187,7 @@ class RegisterView(FormView):
 
     template_name = "users/register_form.html"
     form_class = RegisterForm
-    success_url = reverse_lazy('predictions')
+    success_url = reverse_lazy('guest_page')
 
     def form_valid(self, form):
         username = form.cleaned_data['username']

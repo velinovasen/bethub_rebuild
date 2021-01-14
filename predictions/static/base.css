@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -48,14 +49,14 @@ tbody {
     width: 5em;
 }
 
-ul {
+/* ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background: -webkit-linear-gradient(right, #25c481, #25b7c4);
   background: linear-gradient(to left, #25c481, #25b7c4);
-}
+} */
 
 li {
   float: left;
@@ -348,11 +349,125 @@ form span {
     resize: none;
     }
 
-@media screen and (max-width: 700px){
-.box{
-  width: 70%;
+@media (max-width: 800px){
+th {
+    display: none;
 }
-.popup{
-  width: 70%;
+
+table td {
+  width: 100%;
+  float: left;
+  display: block;
+
+}
+.time_regular {
+  width: 100%;
+  float: left;
+  display: block;
+}
+#time_field_header {
+  display: none;
+}
+}
+
+
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background: -webkit-linear-gradient(right, #25c481, #25b7c4);
+    background: linear-gradient(to left, #25c481, #25b7c4);
+    color: white;
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+
+.navbar-links li a:hover {
+    background-color: #25b8bf;
+}
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+    .teams_blocks {
+        width: 100%;
+    }
+    td {
+      font-size: 13px;
+      height: 20px;
+    }
+    .navbar-links li a:hover .navbar-links li:hover {
+    background-color: #25b8bf;
 }
 }

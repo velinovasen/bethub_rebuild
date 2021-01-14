@@ -1,0 +1,14 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+    {% block site_title %}BETHUB | MY BETS{% endblock %}
+        {% include 'partials/navbar.html' %}
+        {% block header_content %}
+            <h1>MY BETS</h1>
+        {% endblock %}
+        {% block site_content %}
+
+            {% include 'partials/tables/bets_pending_table.html' %}
+
+        {% endblock %}
+       {% block body_end_scripts %}
+        {% endblock %}
