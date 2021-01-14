@@ -11,11 +11,14 @@ from predictions.forms import RegisterForm, UserPredictionForm, UpdateUserPredic
 from predictions.models import Prediction, BetsVolume, Game, AppUser, UserPrediction, Bet
 
 
+
+
+
 def my_bets_history_view(request):
-    appUser = AppUser.objects.get(user=request.user)
+    app_user = AppUser.objects.get(user=request.user)
     context = {
-        "all_bets": Bet.objects.filter(game__status='finished', bet_user=appUser),
-        "creator": appUser
+        "all_bets": reversed(Bet.objects.filter(game__status='finished', bet_user=app_user)),
+        "creator": app_user
     }
     return render(request, 'my_bets_history.html', context)
 
@@ -28,22 +31,22 @@ def make_bet_view(request):
     }
     if request.POST:
         form = BetForm(request.POST)
-        print('gore da')
+        # print('gore da')
         if form.is_valid():
-            print('i vutre da')
+            # print('i vutre da')
             game_id = form.cleaned_data['game_id']
             game = Game.objects.filter(pk=game_id)[0]
             creator = AppUser.objects.get(user=request.user)
-            date_time = str(game).split(' | ')[0]
-            date, time = date_time.split(' ')
+            # date_time = str(game).split(' | ')[0]
+            # date, time = date_time.split(' ')
             sign = form.cleaned_data['sign']
             odd = form.cleaned_data['odd']
             amount = form.cleaned_data['amount']
             if amount > creator.cash:
-                print('NO MONEY')
+                # print('NO MONEY')
                 context['message'] = 'Not enough money!'
                 return render(request, 'make_bet.html', context)
-            print('VSICHKO 6')
+            # print('VSICHKO 6')
             Bet.objects.create(game=game, bet_user=creator, bet_sign=sign, bet_odd=odd, bet_amount=amount)
             creator.cash -= amount
             creator.save()
@@ -63,20 +66,20 @@ def make_prediction_view(request):
     }
     if request.POST:
         form = UserPredictionForm(request.POST)
-        print('gore da')
+        # print('gore da')
         if form.is_valid():
-            print('i vutre da')
+            # print('i vutre da')
             game_id = form.cleaned_data['game_id']
             game = Game.objects.filter(pk=game_id)[0]
             creator = AppUser.objects.get(user=request.user)
-            date_time = str(game).split(' | ')[0]
-            date, time = date_time.split(' ')
+            # date_time = str(game).split(' | ')[0]
+            # date, time = date_time.split(' ')
             home_team = form.cleaned_data['home_team']
             away_team = form.cleaned_data['away_team']
             sign = form.cleaned_data['sign']
             odd = form.cleaned_data['odd']
             thoughts = form.cleaned_data['thoughts']
-            print('VSICHKO 6')
+            # print('VSICHKO 6')
             UserPrediction.objects.create(game=game, creator=creator, home_team=home_team,
                                           away_team=away_team, sign=sign, odd=odd, thoughts=thoughts)
         else:
@@ -95,12 +98,12 @@ def my_predictions_view(request):
     }
     if request.POST:
         form = UpdateUserPredictionForm(request.POST)
-        print(form.is_valid())
-        print(form)
+        # print(form.is_valid())
+        # print(form)
         if form.is_valid():
-            print(form)
+            # print(form)
             my_prediction = UserPrediction.objects.filter(pk=form.cleaned_data['game_id'])[0]
-            print(my_prediction)
+            # print(my_prediction)
             my_prediction.thoughts = form.cleaned_data['thoughts']
             my_prediction.save()
             return render(request, 'my_predictions.html', context)
@@ -124,9 +127,17 @@ def delete_prediction_view(request, id):
 
 
 def guest_view(request):
-    context = {
-        "all_games": Game.objects.filter(status='not played', time__gte=now(), date__gte=now()).order_by('date', 'time')
-    }
+    all_games = Game.objects.filter(status='not played', time__gte=now(), date__gte=now()).order_by('date', 'time')
+    context = ''
+    if request.user.is_authenticated:
+        context = {
+            "all_games": all_games,
+            "creator": AppUser.objects.get(user=request.user)
+        }
+    else:
+        context = {
+            "all_games": all_games,
+        }
     return render(request, 'guest_home.html', context)
 
 
@@ -139,9 +150,16 @@ def predictions_view(request):
 
 
 def volume_view(request):
-    context = {
-        "all_volume": BetsVolume.objects.all(),
-    }
+    all_volume = BetsVolume.objects.all()
+    if request.user.is_authenticated:
+        context = {
+            "all_volume": all_volume,
+            "creator": AppUser.objects.get(user=request.user)
+        }
+    else:
+        context = {
+            "all_volume": all_volume
+        }
     return render(request, 'volume.html', context)
 
 

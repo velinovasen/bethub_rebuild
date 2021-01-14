@@ -7,6 +7,7 @@
 }
 
 #navbar {
+    float: left;
     margin-left: 15%;
     width: 65%;
     position: center;
@@ -15,6 +16,15 @@
 
 #navbar-spacer {
     width: 100%;
+}
+
+.outside-balloons-nav {
+    width: 33%;
+    block: display;
+}
+
+#space-profile-nav {
+    width: 75%;
 }
 
 .navbar-right-buttons:hover {

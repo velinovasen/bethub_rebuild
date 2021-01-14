@@ -1,19 +1,24 @@
 <div id="navbar">
     {% if user.is_authenticated %}
     <ul class="navbar-left-part">
-        <li><a href="{% url 'guest_page' %}">Home</a></li>
+        <div class="outside-balloons-nav" style="display: flex">
+            <li><a href="{% url 'guest_page' %}">Home</a></li>
 
-        <li><a href="{% url 'volume' %}">Traffic</a></li>
-        <li><a href="{% url 'predictions' %}">Predictions</a></li>
-        <li><a href="{% url 'results' %}">Results</a></li>
-
-        <div id="navbar-spacer"><div id="make-prediction-make-bet-spacer">
-        <li><a class="navbar-right-buttons" href="{% url 'make_bet' %}"><b>Place a Bet</b></a></li>
+            <li><a href="{% url 'volume' %}">Traffic</a></li>
+            <li><a href="{% url 'predictions' %}">Predictions</a></li>
+<!--            <li><a href="{% url 'results' %}">Results</a></li>-->
         </div>
-
+        <div class="outside-balloons-nav">
+            <div id="navbar-spacer"><div id="make-prediction-make-bet-spacer">
+            <li><a class="navbar-right-buttons" href="{% url 'make_bet' %}"><b>Place a Bet</b></a></li>
+            </div>
         </div>
-        <li><a><span><b>{{user.username}} {{creator.cash}}</b></span></a></li>
-        <li><a class="navbar-right-buttons" href="{% url 'logout' %}">Logout</a></li>
+        </div>
+        <div class="outside-balloons-nav">
+            <li><a class="navbar-right-buttons" href="{% url 'history' %}">History</a></li>
+            <li><a><span><b>{{user.username}} {{creator.cash}}</b></span></a></li>
+            <li><a class="navbar-right-buttons" href="{% url 'logout' %}">Logout</a></li>
+        </div>
     </ul>
     {% else %}
     <ul class="navbar-left-part">
@@ -22,6 +27,7 @@
         <div id="navbar-spacer"><div id="make-prediction-make-bet-spacer">
         <li><a class="navbar-right-buttons" href="{% url 'login' %}">Login</a></li>
         <li><a class="navbar-right-buttons" href="{% url 'register' %}">Register</a></li>
+        </div></div>
     </ul>
     {% endif %}
 </div>
