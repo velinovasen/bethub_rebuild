@@ -16,6 +16,7 @@
             <th>Draw Odds</th>
             <th>Away Odds</th>
             <th>Temp</th>
+            <th id="empty-spacer-for-table-header"></th>
         </tr>
       </thead>
     </table>
@@ -39,6 +40,7 @@
           <td>{{ pred.draw_odd|floatformat:2 }}</td>
           <td>{{ pred.away_odd|floatformat:2 }}</td>
           <td>{{ pred.temp }}</td>
+          <td id="empty-spacer-for-table-data"></td>
       </tr>
       {% endfor %}
       </tbody>

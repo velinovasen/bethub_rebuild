@@ -11,6 +11,15 @@ from predictions.forms import RegisterForm, UserPredictionForm, UpdateUserPredic
 from predictions.models import Prediction, BetsVolume, Game, AppUser, UserPrediction, Bet
 
 
+def standings_view(request):
+    all_users = AppUser.objects.order_by('cash').reverse()
+    context = {
+        "all_users": all_users,
+        "creator": AppUser.objects.get(user=request.user)
+    }
+    return render(request, 'standings.html', context)
+
+
 def my_pending_bets_view(request):
     app_user = AppUser.objects.get(user=request.user)
     context = {
@@ -23,7 +32,7 @@ def my_pending_bets_view(request):
 def my_bets_history_view(request):
     app_user = AppUser.objects.get(user=request.user)
     context = {
-        "all_bets": reversed(Bet.objects.filter(game__status='finished', bet_user=app_user)),
+        "all_bets": Bet.objects.filter(game__status='finished', bet_user=app_user).order_by('-game__date', '-game__time'),
         "creator": app_user
     }
     return render(request, 'my_bets_history.html', context)

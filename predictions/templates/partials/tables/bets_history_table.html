@@ -11,6 +11,7 @@
             <th>Odd</th>
             <th>Amount</th>
             <th>Status</th>
+            <th id="empty-spacer-for-table-header"></th>
         </tr>
       </thead>
     </table>
@@ -19,7 +20,7 @@
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
       {% for bet in all_bets %}
-      <tr>
+      <tr class="bet-row-border">
           <td>{{ bet.game.date }}</td>
           <td>{{ bet.game.time }}</td>
           <td>{{ bet.game.home_team }}</td>
@@ -29,6 +30,7 @@
           <td>{{ bet.bet_odd|floatformat:2 }}</td>
           <td>{{ bet.bet_amount }}</td>
           <td>{{ bet.get_status_display }}</td>
+          <td id="empty-spacer-for-table-data"></td>
       </tr>
       {% endfor %}
       </tbody>

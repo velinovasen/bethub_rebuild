@@ -24,8 +24,9 @@
       <change beforePath="$PROJECT_DIR$/celerybeat-schedule.dat" beforeDir="false" afterPath="$PROJECT_DIR$/celerybeat-schedule.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/predictions/static/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/static/base.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/predictions/templates/partials/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/partials/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/templates/partials/tables/games_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/partials/tables/games_table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/templates/shared/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/shared/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/templates/partials/tables/bets_history_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/partials/tables/bets_history_table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/templates/partials/tables/bets_pending_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/partials/tables/bets_pending_table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictions/templates/partials/tables/predictions_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/templates/partials/tables/predictions_table.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/predictions/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/predictions/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/views.py" afterDir="false" />
     </list>
@@ -61,11 +62,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Asen\Desktop\bethub_rebuild\bethub_rebuild\predictions\templates" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Asen\Desktop\bethub_rebuild\bethub_rebuild" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Asen\Desktop\bethub_rebuild\bethub_rebuild\predictions\templates" />
     </key>
   </component>
   <component name="RunManager" selected="Python.check_results">

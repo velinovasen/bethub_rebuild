@@ -1,0 +1,23 @@
+<div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+            <th>Username</th>
+            <th>Amount</th>
+        </tr>
+      </thead>
+    </table>
+</div>
+<div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+      {% for user in all_users %}
+      <tr>
+          <td>{{ user.user.username }}</td>
+          <td>{{ user.cash }}</td>
+
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+</div>

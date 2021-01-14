@@ -1,0 +1,14 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+    {% block site_title %}BETHUB | STANDINGS{% endblock %}
+        {% include 'partials/navbar.html' %}
+        {% block header_content %}
+            <h1>TOP TIPSTERS</h1>
+        {% endblock %}
+        {% block site_content %}
+
+            {% include 'partials/tables/standings_table.html' %}
+
+        {% endblock %}
+       {% block body_end_scripts %}
+        {% endblock %}

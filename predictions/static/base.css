@@ -58,6 +58,13 @@ tbody {
   background: linear-gradient(to left, #25c481, #25b7c4);
 } */
 
+#logo-link {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+
+
 li {
   float: left;
 }
@@ -216,6 +223,10 @@ p {
 
 #send-button-div {
     display: inline-block;
+}
+
+#empty-spacer-for-table-data #empty-spacer-for-table-header {
+    display: none;
 }
 /* demo styles */
 
@@ -428,7 +439,22 @@ table td {
     background-color: white;
     border-radius: 10px;
 }
+@media (max-width: 1200px) {
+    #main-site {
+    width: 100%;
+    margin-left: 0;
+    }
+}
 
+@media (max-width: 1000px) {
+    .popup {
+        width: 70%;
+    }
+        #main-site {
+    width: 100%;
+    margin-left: 0;
+    }
+}
 @media (max-width: 800px) {
     .navbar {
         flex-direction: column;
@@ -469,5 +495,21 @@ table td {
     }
     .navbar-links li a:hover .navbar-links li:hover {
     background-color: #25b8bf;
-}
+    }
+    .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: rgb(37,189,166);
+    border-radius: 5px;
+    width: 100%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    }
+    #empty-spacer-for-table-data #empty-spacer-for-table-header {
+        display: block;
+    }
+    #main-site {
+    width: 100%;
+    margin-left: 0;
+    }
 }

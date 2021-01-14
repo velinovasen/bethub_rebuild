@@ -10,6 +10,7 @@
             <th>Odd</th>
             <th>Amount</th>
             <th>Status</th>
+            <th id="empty-spacer-for-table-header"></th>
         </tr>
       </thead>
     </table>
@@ -27,6 +28,7 @@
           <td>{{ bet.bet_odd|floatformat:2 }}</td>
           <td>{{ bet.bet_amount }}</td>
           <td>{{ bet.get_status_display }}</td>
+          <td id="empty-spacer-for-table-data"></td>
       </tr>
       {% endfor %}
       </tbody>
