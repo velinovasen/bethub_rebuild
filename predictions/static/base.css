@@ -39,6 +39,7 @@
 #main-site {
     width: 65%;
     margin-left: 15%;
+    text-align: center;
 }
 
 tbody {
@@ -284,7 +285,7 @@ form span {
 }
 
 
-/* login-form helper div inside the form */
+/* login-form helper div inside the form
 #login-helper, #register-helper {
     display: grid;
     width: 20%;
@@ -296,7 +297,7 @@ form span {
     text-align: center;
     margin-inline: auto;
 }
-
+*/
 #make-prediction-make-bet-spacer {
     width: 40%;
     margin-inline: auto;
