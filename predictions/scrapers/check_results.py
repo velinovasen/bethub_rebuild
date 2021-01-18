@@ -34,7 +34,7 @@ class Results:
     }
 
     REGEX = {
-        "score": r'[t][a][b][l][e]\-[s][c][o][r][e]\"\>(\d{1,2}\:\d{1,2})\<\/',
+        "score": r'[t][a][b][l][e]\-[s][c][o][r][e]\"\>(\d{1,2}\:\d{1,2}|\d{1,2}\:\d{1,2}.+|[p][o][s][t][p][.])\<\/',
         "both_teams_draw": r'\/\"\>([A-z0-9].{1,40})[ ]\-[ ]([A-z0-9].{1,40})\<\/[a]',
         "home_won": r'[s][p][a][n][ ][c][l][a][s][s]\=\"[b][o][l][d]\"\>([A-z0-9].{1,40})\<\/[s][p][a][n]',
         "home_loosing": r'\/\"\>([A-z0-9].{1,40})[ ]\-[ ]',
@@ -76,8 +76,9 @@ class Results:
     def clean_data(self, games, link):
         # CLEAN THE DATA
         for game in games:
-            # print(game)
             score = re.search(self.REGEX['score'], str(game))
+            print(game)
+            print('--------------------------------------------------------')
             try:
                 if score:
                     score = score.group(1)
@@ -158,6 +159,6 @@ class Results:
                 print(e)
 
 
-# if __name__ == '__main__':
-#     tmr = Results()
-#     tmr.scrape()
+if __name__ == '__main__':
+    tmr = Results()
+    tmr.scrape()
