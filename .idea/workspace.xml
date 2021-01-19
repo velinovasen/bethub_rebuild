@@ -22,8 +22,6 @@
     <list default="true" id="23a453b3-72db-49be-9b80-6baff487b7ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/celerybeat-schedule.dat" beforeDir="false" afterPath="$PROJECT_DIR$/celerybeat-schedule.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/celerybeat.pid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictions/scrapers/check_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictions/scrapers/check_results.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
