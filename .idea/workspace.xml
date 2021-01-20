@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="23a453b3-72db-49be-9b80-6baff487b7ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/celerybeat-schedule.dat" beforeDir="false" afterPath="$PROJECT_DIR$/celerybeat-schedule.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/celerybeat.pid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
