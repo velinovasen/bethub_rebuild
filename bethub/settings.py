@@ -25,7 +25,10 @@ SECRET_KEY = '7de31op=%+p&!fv-)+q6x-uq@1*zcemp^g@q+9$vu3njelc*dw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    'bethub.herokuapp.com',
+]
 
 
 # Application definition
