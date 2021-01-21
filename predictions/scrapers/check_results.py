@@ -163,9 +163,9 @@ class Results:
 
 
 
-# if __name__ == '__main__':
-#     tmr = Results()
-#     tmr.scrape()
+if __name__ == '__main__':
+    tmr = Results()
+    tmr.scrape()
 
 
 
