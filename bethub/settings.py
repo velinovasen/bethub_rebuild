@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'django_celery_beat',
     'django_celery_results',
 ]
-
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_CACHE_BACKEND = 'django-cache'
 
