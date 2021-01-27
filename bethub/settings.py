@@ -44,8 +44,8 @@ INSTALLED_APPS = [
     'django_celery_beat',
     'django_celery_results',
 ]
-CELERY_RESULT_BACKEND = 'django-db'
-CELERY_CACHE_BACKEND = 'django-cache'
+CELERY_BROKER_URL = "redis://redis:6379"
+CELERY_RESULT_BACKEND = "redis://redis:6379"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

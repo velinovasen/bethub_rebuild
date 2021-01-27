@@ -18,19 +18,23 @@ app.conf.broker_url = 'redis://localhost:6379/0'
 app.conf.beat_schedule = {
     'check-results-every-2-min': {
         'task': 'predictions.tasks.get_results_celery',
-        'schedule': crontab(minute='*/2')
+        'schedule': crontab(minute='*/2'),
+        'options': {'queue': 'celery'}
     },
     'get-games-every-10-min': {
         'task': 'predictions.tasks.get_games_celery',
         'schedule': crontab(minute='*/10'),
+        'options': {'queue': 'celery'}
     },
     'get-bets-volume-every-15-min': {
         'task': 'predictions.tasks.get_volume_celery',
         'schedule': crontab(minute='*/15'),
+        'options': {'queue': 'celery'}
     },
     'get-predictions-every-3-min': {
         'task': 'predictions.tasks.get_predictions_celery',
         'schedule': crontab(minute='*/3'),
+        'options': {'queue': 'celery'}
     }
 }
 

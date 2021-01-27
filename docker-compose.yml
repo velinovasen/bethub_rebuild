@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   redis:
-    image: redis
+    image: redis:alpine
   web:
     image: velinovasen/bethub
     build: .
@@ -16,8 +16,7 @@ services:
       - DB_PASSWORD=postgres
       - DB_HOST=db
       - DB_PORT=5432
-    command: 'gunicorn bethub.wsgi --bind 0.0.0.0:8000'
-    #python manage.py runserver 0.0.0.0:8000
+    command: gunicorn bethub.wsgi --bind 0.0.0.0:8000
     volumes:
       - .:/code
     ports:
@@ -27,20 +26,18 @@ services:
       - redis
   celery_worker:
     build: .
-    command: celery -A bethub worker -l info
-    volumes:
-      - .:/code
+    command: celery -A bethub worker -l info --uid=nobody -P solo
     deploy:
-      replicas: 2
+      replicas: 1
       restart_policy:
         condition: on-failure
-      resources:
-        limits:
-          cpus: '0.50'
-          memory: 50M
-        reservations:
-          cpus: '0.25'
-          memory: 20M
+#      resources:
+#        limits:
+#          cpus: '0.50'
+#          memory: 50M
+#        reservations:
+#          cpus: '0.25'
+#          memory: 20M
     restart: on-failure
     environment:
       - DEBUG=1
@@ -53,20 +50,16 @@ services:
       - redis
   celery_beat:
     build: .
-    command: celery -A bethub beat -l info
     environment:
       - CELERY_BROKER=redis://redis:6379/0
       - CELERY_BACKEND=redis://redis:6379/0
+      - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+    command: celery -A bethub beat -l info
     depends_on:
       - web
       - db
       - redis
       - celery_worker
-    links:
-      - redis
-      - db
-      - celery_worker
-      - web
     restart: on-failure
   db:
     image: postgres
